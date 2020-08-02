@@ -15,9 +15,9 @@ final class ImageTypesTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .white
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = ImageTypesTableViewCell.imageViewCornerRadius
         imageView.layer.masksToBounds = true
-        let image = UIImage(named: "pok_silhouette.png")
+        let image = UIImage(named: ImageTypesTableViewCell.imagePlaceholderName)
         imageView.image = image
         return imageView
     }()
@@ -33,7 +33,7 @@ final class ImageTypesTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.spacing = ImageTypesTableViewCell.stackViewInternalSpacing
         stackView.distribution = .fillProportionally
         return stackView
     }()
@@ -56,11 +56,11 @@ final class ImageTypesTableViewCell: UITableViewCell {
         
         addSubview(imageTypesStackView)
         
-        imageTypesStackView.anchor(to: self, constant: 10)
+        imageTypesStackView.anchor(to: self, constant: ImageTypesTableViewCell.stackViewSpacing)
         
         NSLayoutConstraint.activate([
-            pokemonImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 100),
-            pokemonImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
+            pokemonImageView.heightAnchor.constraint(lessThanOrEqualToConstant: ImageTypesTableViewCell.imageViewHeightWidth),
+            pokemonImageView.widthAnchor.constraint(lessThanOrEqualToConstant: ImageTypesTableViewCell.imageViewHeightWidth),
         ])
     }
     
@@ -70,7 +70,20 @@ final class ImageTypesTableViewCell: UITableViewCell {
     }
     
     func config(image: UIImage? = nil, types: [Types]? = nil) {
-        pokemonImageView.image = image
+        if let image = image {
+            pokemonImageView.image = image
+        }
         typesView.config(types: types)
     }
+}
+
+//MARK: Constants
+
+extension ImageTypesTableViewCell {
+    
+    static var imageViewCornerRadius: CGFloat = 20
+    static var imagePlaceholderName: String = "pok_silhouette.png"
+    static var imageViewHeightWidth: CGFloat = 100
+    static var stackViewInternalSpacing: CGFloat = 10
+    static var stackViewSpacing: CGFloat = 10
 }

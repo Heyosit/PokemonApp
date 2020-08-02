@@ -27,7 +27,7 @@ final class AbilitiesTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.textColor = UIColor.Common.orange
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: AbilitiesTableViewCell.titleFontSize, weight: .bold)
         label.text = "Abilities"
         return label
     }()
@@ -36,8 +36,8 @@ final class AbilitiesTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: 120, height: 30)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.itemSize = AbilitiesTableViewCell.collectionViewCellLayoutSize
+        layout.sectionInset = AbilitiesTableViewCell.collectionViewCellLayoutInset
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isScrollEnabled = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,17 +69,17 @@ final class AbilitiesTableViewCell: UITableViewCell {
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            hairlineView.heightAnchor.constraint(equalToConstant: 2),
+            hairlineView.heightAnchor.constraint(equalToConstant: AbilitiesTableViewCell.hairlineTopSpacing),
             hairlineView.topAnchor.constraint(equalTo: self.topAnchor),
-            hairlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.trailingAnchor.constraint(equalTo: hairlineView.trailingAnchor, constant: 10),
+            hairlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AbilitiesTableViewCell.hairlineSideSpacing),
+            self.trailingAnchor.constraint(equalTo: hairlineView.trailingAnchor, constant: AbilitiesTableViewCell.hairlineSideSpacing),
 
-            titleLabel.topAnchor.constraint(equalTo: hairlineView.bottomAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: hairlineView.bottomAnchor, constant: AbilitiesTableViewCell.titleTopBottomSpacing),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AbilitiesTableViewCell.titleSideSpacing),
+            self.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: AbilitiesTableViewCell.titleSideSpacing),
             
-            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: AbilitiesTableViewCell.collectionViewHeight),
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: AbilitiesTableViewCell.titleTopBottomSpacing),
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
@@ -132,4 +132,20 @@ extension AbilitiesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
 }
+
+//MARK: Constants
+
+extension AbilitiesTableViewCell {
+    
+    static var titleFontSize: CGFloat = 20
+    static var collectionViewCellLayoutSize = CGSize(width: 120, height: 30)
+    static var collectionViewCellLayoutInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    static var hairlineTopSpacing: CGFloat = 2
+    static var hairlineSideSpacing: CGFloat = 10
+    static var titleTopBottomSpacing: CGFloat = 8
+    static var titleSideSpacing: CGFloat = 10
+    static var collectionViewHeight: CGFloat = 100
+    
+}
+
 

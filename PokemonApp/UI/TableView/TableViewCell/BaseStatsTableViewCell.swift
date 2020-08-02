@@ -27,7 +27,7 @@ final class BaseStatsTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.textColor = UIColor.Common.orange
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: BaseStatsTableViewCell.titleFontSize, weight: .bold)
         label.text = "Base Stats:"
         return label
     }()
@@ -36,8 +36,8 @@ final class BaseStatsTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: 160, height: 30)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.itemSize = BaseStatsTableViewCell.collectionViewCellLayoutSize
+        layout.sectionInset = BaseStatsTableViewCell.collectionViewCellLayoutInset
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isScrollEnabled = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,17 +69,17 @@ final class BaseStatsTableViewCell: UITableViewCell {
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            hairlineView.heightAnchor.constraint(equalToConstant: 2),
+            hairlineView.heightAnchor.constraint(equalToConstant: BaseStatsTableViewCell.hairlineTopSpacing),
             hairlineView.topAnchor.constraint(equalTo: self.topAnchor),
-            hairlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.trailingAnchor.constraint(equalTo: hairlineView.trailingAnchor, constant: 10),
+            hairlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: BaseStatsTableViewCell.hairlineSideSpacing),
+            self.trailingAnchor.constraint(equalTo: hairlineView.trailingAnchor, constant: BaseStatsTableViewCell.hairlineSideSpacing),
 
-            titleLabel.topAnchor.constraint(equalTo: hairlineView.bottomAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: hairlineView.bottomAnchor, constant: BaseStatsTableViewCell.titleTopBottomSpacing),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: BaseStatsTableViewCell.titleSideSpacing),
+            self.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: BaseStatsTableViewCell.titleSideSpacing),
             
-            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: BaseStatsTableViewCell.collectionViewHeight),
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: BaseStatsTableViewCell.titleTopBottomSpacing),
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
@@ -133,5 +133,20 @@ extension BaseStatsTableViewCell: UICollectionViewDelegate, UICollectionViewData
         cell.config(title: statsList[indexPath.row].name, description: "\(statsList[indexPath.row].value)")
         return cell
     }
+    
+}
+
+//MARK: Constants
+
+extension BaseStatsTableViewCell {
+    
+    static var titleFontSize: CGFloat = 20
+    static var collectionViewCellLayoutSize = CGSize(width: 160, height: 30)
+    static var collectionViewCellLayoutInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    static var hairlineTopSpacing: CGFloat = 2
+    static var hairlineSideSpacing: CGFloat = 10
+    static var titleTopBottomSpacing: CGFloat = 8
+    static var titleSideSpacing: CGFloat = 10
+    static var collectionViewHeight: CGFloat = 100
     
 }

@@ -15,20 +15,16 @@ final class PokeApi {
     let BASE_URL = "https://pokeapi.co/api/v2/"
     
     func fetchPokemonSummary(withPath newPath: String? = nil, completion: @escaping (PokemonSummaryResults?) -> ()) {
-        var path = BASE_URL + ApiPath.fetchPokemonSummary.path()
-        
-        if let newPath = newPath {
-            path = newPath
-        }
+        let path = newPath ?? BASE_URL + ApiPath.fetchPokemonSummary.path()
         
         getResponse(path: path, type: PokemonSummaryResults.self, completion: { (pokemonSummaryResult) in
             completion(pokemonSummaryResult)
         })
-        
     }
     
     func fetchPokemonById(id: Int, completion: @escaping (Pokemon?) -> () ) {
         let path = BASE_URL + ApiPath.fetchPokemonById.path(value: "\(id)")
+        
         getResponse(path: path, type: Pokemon.self, completion: { (pokemon) in
             completion(pokemon)
         })

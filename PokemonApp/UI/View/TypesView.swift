@@ -18,7 +18,7 @@ final class TypesView: UIView {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.textColor = UIColor.Common.orange
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: TypesView.titleFontSize, weight: .bold)
         return label
     }()
     
@@ -73,7 +73,7 @@ final class TypesView: UIView {
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            typesStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            typesStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: TypesView.stackViewTopSpacing),
             typesStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             typesStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             typesStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -83,8 +83,8 @@ final class TypesView: UIView {
     
     private func setupProperties() {
         self.backgroundColor = .clear
-        titleLabel.text = "Types:"
-        primaryTypeLabel.text = "Not Defined"
+        titleLabel.text = TypesView.titleLabelText
+        primaryTypeLabel.text = TypesView.primaryLabelPlaceholderText
         secondaryTypeLabel.text = ""
     }
     
@@ -102,6 +102,15 @@ final class TypesView: UIView {
                 labels[index].text = typeName.capitalized
             }
         }
-        
     }
+}
+
+//MARK: Constants
+
+extension TypesView {
+    
+    static var titleFontSize: CGFloat = 20
+    static var stackViewTopSpacing: CGFloat = 8
+    static var titleLabelText = "Types: "
+    static var primaryLabelPlaceholderText = "Not Defined"
 }

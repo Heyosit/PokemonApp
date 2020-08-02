@@ -16,7 +16,7 @@ final class PokemonSummaryTableViewCell: UITableViewCell {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.backgroundColor = UIColor.Common.lightBlue
-        containerView.layer.cornerRadius = 20
+        containerView.layer.cornerRadius = PokemonSummaryTableViewCell.containerViewCornerRadius
         containerView.layer.masksToBounds = true
         return containerView
     }()
@@ -62,18 +62,18 @@ final class PokemonSummaryTableViewCell: UITableViewCell {
         self.addSubview(containerView)
                 
         NSLayoutConstraint.activate([
-            containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 40),
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 10),
-            bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 5),
+            containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: PokemonSummaryTableViewCell.containerViewHeight),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: PokemonSummaryTableViewCell.containerViewTopBottomSpacing),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: PokemonSummaryTableViewCell.containerViewSideSpacing),
+            trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: PokemonSummaryTableViewCell.containerViewSideSpacing),
+            bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: PokemonSummaryTableViewCell.containerViewTopBottomSpacing),
             
             idLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            idLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            idLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: PokemonSummaryTableViewCell.labelSideSpacing),
 
             nameLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 20),
-            containerView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 20),
+            nameLabel.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: PokemonSummaryTableViewCell.labelSideSpacing),
+            containerView.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: PokemonSummaryTableViewCell.labelSideSpacing),
             
         ])
     }
@@ -97,8 +97,11 @@ final class PokemonSummaryTableViewCell: UITableViewCell {
 
 extension PokemonSummaryTableViewCell {
     
-    static var leadingLabelSpacing: CGFloat = 15
-    static var topBottomLabelSpacing: CGFloat = 5
+    static var containerViewCornerRadius: CGFloat = 20
+    static var containerViewHeight: CGFloat = 40
+    static var containerViewTopBottomSpacing: CGFloat = 5
+    static var containerViewSideSpacing: CGFloat = 10
     static var nameLabelFontSize: CGFloat = 22
     static var idLabelFontSize: CGFloat = 30
+    static var labelSideSpacing: CGFloat = 20
 }

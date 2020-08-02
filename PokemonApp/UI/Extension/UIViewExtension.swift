@@ -1,5 +1,5 @@
 //
-//  UIViewControllerExtension.swift
+//  UIViewExtension.swift
 //  PokemonApp
 //
 //  Created by Alessio Perrotti on 30/07/2020.

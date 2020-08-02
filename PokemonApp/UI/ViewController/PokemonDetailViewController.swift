@@ -94,7 +94,6 @@ final class PokemonDetailViewController: UIViewController {
     
     private func getPokemonImages() {
         guard let sprites = pokemon?.sprites, !sprites.frontImageURLs.isEmpty else { return }
-        
         PokeApi.shared.fetchImages(for: sprites, completion: { (imageList) in
             DispatchQueue.main.async {
                 if !imageList.isEmpty {
@@ -114,28 +113,23 @@ extension PokemonDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let pokemon = pokemon else {
-            let cell = UITableViewCell()
-            cell.backgroundColor = .clear
-            return cell
-        }
         
         let element = rows[indexPath.row]
         switch element {
         case .imageType:
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageTypesTableViewCell.reuseIdentifier, for: indexPath) as! ImageTypesTableViewCell
-            cell.config(image: pokemon.imageList?.first, types: pokemon.types)
+            cell.config(image: pokemon?.imageList?.first, types: pokemon?.types)
             
             return cell
         case .baseStats:
             let cell = tableView.dequeueReusableCell(withIdentifier: BaseStatsTableViewCell.reuseIdentifier, for: indexPath) as! BaseStatsTableViewCell
-            cell.config(stats: pokemon.stats)
+            cell.config(stats: pokemon?.stats)
             
             return cell
         case .abilities:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: AbilitiesTableViewCell.reuseIdentifier, for: indexPath) as! AbilitiesTableViewCell
-            cell.config(abilities: pokemon.abilities)
+            cell.config(abilities: pokemon?.abilities)
             
             return cell
         }

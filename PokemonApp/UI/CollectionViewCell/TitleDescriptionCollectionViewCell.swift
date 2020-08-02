@@ -18,7 +18,7 @@ final class TitleDescriptionCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.textColor = UIColor.Common.orange
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: TitleDescriptionCollectionViewCell.titleFontSize, weight: .bold)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -29,7 +29,7 @@ final class TitleDescriptionCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.textColor = UIColor.Common.orange
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: TitleDescriptionCollectionViewCell.descriptionFontSize, weight: .regular)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -88,3 +88,10 @@ final class TitleDescriptionCollectionViewCell: UICollectionViewCell {
     }
 }
 
+//MARK: Constants
+
+extension TitleDescriptionCollectionViewCell {
+    
+    static var titleFontSize: CGFloat = 16
+    static var descriptionFontSize: CGFloat = 16
+}
