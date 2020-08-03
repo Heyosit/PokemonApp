@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class PokeApi {
     
@@ -54,18 +55,21 @@ final class PokeApi {
         var imageListResult = [UIImage]()
         for (index, imageUrl) in sprites.frontImageURLs.enumerated() {
             guard let url = URL(string: imageUrl) else { return }
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
+            let imageView = UIImageView()
+            imageView.kf.setImage(with: url) { result in
+                switch result {
+                case .success:
+                    if let image = imageView.image {
+                        imageListResult.append(image)
+                    }
+                case .failure(let error):
                     print("Failed to fetch image with error: ", error.localizedDescription)
-                    return
                 }
-                guard let data = data else { return }
-                guard let image = UIImage(data: data) else { return }
-                imageListResult.append(image)
+                
                 if index == sprites.frontImageURLs.count - 1 {
                     completion(imageListResult)
                 }
-            }.resume()
+            }
             
         }
     }

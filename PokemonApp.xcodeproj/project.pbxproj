@@ -33,6 +33,9 @@
 		156CD01824D72B0B007490AA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CD01724D72B0B007490AA /* AbilitiesTableViewCell.swift */; };
 		156CD01D24D740FB007490AA /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CD01C24D740FB007490AA /* PokedexViewController.swift */; };
 		156CD01F24D7411D007490AA /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CD01E24D7411D007490AA /* PokemonDetailViewController.swift */; };
+		15FFF79A24D86F2300DD0551 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 15FFF79924D86F2300DD0551 /* ReadMe.md */; };
+		6544C70B3689CDB149901EE4 /* Pods_PokemonAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1C6AF53F34FED3DCA42D4E /* Pods_PokemonAppTests.framework */; };
+		EF3BA32191CC3E9DD69FD802 /* Pods_PokemonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A23DB6F4034CF253939A2 /* Pods_PokemonApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,13 @@
 		156CD01724D72B0B007490AA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
 		156CD01C24D740FB007490AA /* PokedexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 		156CD01E24D7411D007490AA /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		15FFF79924D86F2300DD0551 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		7E5648EAE09EC4B21D973D51 /* Pods-PokemonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApp.release.xcconfig"; path = "Target Support Files/Pods-PokemonApp/Pods-PokemonApp.release.xcconfig"; sourceTree = "<group>"; };
+		A9B21A2A7BF5606D8FB897A6 /* Pods-PokemonAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonAppTests.release.xcconfig"; path = "Target Support Files/Pods-PokemonAppTests/Pods-PokemonAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD4A23DB6F4034CF253939A2 /* Pods_PokemonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1C6AF53F34FED3DCA42D4E /* Pods_PokemonAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E063B1BB5FD64D810F3A4104 /* Pods-PokemonAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PokemonAppTests/Pods-PokemonAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F57E057636E8B4ADFC84AA5E /* Pods-PokemonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApp.debug.xcconfig"; path = "Target Support Files/Pods-PokemonApp/Pods-PokemonApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3BA32191CC3E9DD69FD802 /* Pods_PokemonApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6544C70B3689CDB149901EE4 /* Pods_PokemonAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,9 +191,12 @@
 		151F207024D0A044004B2D44 = {
 			isa = PBXGroup;
 			children = (
+				15FFF79924D86F2300DD0551 /* ReadMe.md */,
 				151F207B24D0A044004B2D44 /* PokemonApp */,
 				151F209224D0A048004B2D44 /* PokemonAppTests */,
 				151F207A24D0A044004B2D44 /* Products */,
+				7938051591A15C7DAF7B12B8 /* Pods */,
+				4CF4B73AED13265D439CBEC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +243,27 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		4CF4B73AED13265D439CBEC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A23DB6F4034CF253939A2 /* Pods_PokemonApp.framework */,
+				DC1C6AF53F34FED3DCA42D4E /* Pods_PokemonAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7938051591A15C7DAF7B12B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F57E057636E8B4ADFC84AA5E /* Pods-PokemonApp.debug.xcconfig */,
+				7E5648EAE09EC4B21D973D51 /* Pods-PokemonApp.release.xcconfig */,
+				E063B1BB5FD64D810F3A4104 /* Pods-PokemonAppTests.debug.xcconfig */,
+				A9B21A2A7BF5606D8FB897A6 /* Pods-PokemonAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,9 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 151F209824D0A048004B2D44 /* Build configuration list for PBXNativeTarget "PokemonApp" */;
 			buildPhases = (
+				62F8EEF373F95AD1B4803019 /* [CP] Check Pods Manifest.lock */,
 				151F207524D0A044004B2D44 /* Sources */,
 				151F207624D0A044004B2D44 /* Frameworks */,
 				151F207724D0A044004B2D44 /* Resources */,
+				F8124DD7FE6932ABC6EBA0D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 151F209B24D0A048004B2D44 /* Build configuration list for PBXNativeTarget "PokemonAppTests" */;
 			buildPhases = (
+				80C3EF0860CC8D49EF7A5927 /* [CP] Check Pods Manifest.lock */,
 				151F208B24D0A048004B2D44 /* Sources */,
 				151F208C24D0A048004B2D44 /* Frameworks */,
 				151F208D24D0A048004B2D44 /* Resources */,
@@ -309,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FFF79A24D86F2300DD0551 /* ReadMe.md in Resources */,
 				151F208924D0A047004B2D44 /* LaunchScreen.storyboard in Resources */,
 				151F208624D0A047004B2D44 /* Assets.xcassets in Resources */,
 				151F208424D0A044004B2D44 /* Main.storyboard in Resources */,
@@ -323,6 +363,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62F8EEF373F95AD1B4803019 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokemonApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80C3EF0860CC8D49EF7A5927 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokemonAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8124DD7FE6932ABC6EBA0D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApp/Pods-PokemonApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApp/Pods-PokemonApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonApp/Pods-PokemonApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		151F207524D0A044004B2D44 /* Sources */ = {
@@ -510,6 +614,7 @@
 		};
 		151F209924D0A048004B2D44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57E057636E8B4ADFC84AA5E /* Pods-PokemonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +633,7 @@
 		};
 		151F209A24D0A048004B2D44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E5648EAE09EC4B21D973D51 /* Pods-PokemonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +652,7 @@
 		};
 		151F209C24D0A048004B2D44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E063B1BB5FD64D810F3A4104 /* Pods-PokemonAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +675,7 @@
 		};
 		151F209D24D0A048004B2D44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9B21A2A7BF5606D8FB897A6 /* Pods-PokemonAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
