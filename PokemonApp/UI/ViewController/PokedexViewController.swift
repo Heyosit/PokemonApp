@@ -114,9 +114,8 @@ extension PokedexViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pokemonDetailVC = PokemonDetailViewController()
         pokemonDetailVC.modalPresentationStyle = .fullScreen
-        pokemonDetailVC.pokemonId = pokemonSummaryList[indexPath.row].id
+        pokemonDetailVC.pokemonSummary = pokemonSummaryList[indexPath.row]
         self.show(pokemonDetailVC, sender: nil)
-        
     }
 }
 

@@ -28,9 +28,14 @@ final class PokemonDetailViewController: UIViewController {
         case abilities
     }
     
-    var pokemonId: Int? { didSet { getPokemonInfo() } }
     private var pokemon: Pokemon? { didSet { didUpdatePokemon() } }
     private var rows: [Row] = [.imageType, .baseStats, .abilities]
+    
+    var pokemonSummary: PokemonSummary? { didSet {
+        navigationItem.title = pokemonSummary?.name?.capitalized
+        getPokemonInfo()
+        }
+    }
     
     override func loadView() {
         super.loadView()
@@ -47,7 +52,6 @@ final class PokemonDetailViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.Common.lightBlue
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.isTranslucent = false
-        navigationItem.title = ""
     }
     
     override func viewDidLoad() {
@@ -82,7 +86,7 @@ final class PokemonDetailViewController: UIViewController {
     //MARK: - API
     
     private func getPokemonInfo() {
-        guard let id = pokemonId else { return }
+        guard let id = pokemonSummary?.id else { return }
         PokeApi.shared.fetchPokemonById(id: id, completion: { (pokemonResult) in
             DispatchQueue.main.async {
                 self.pokemon = pokemonResult
